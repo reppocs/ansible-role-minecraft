@@ -1,0 +1,17 @@
+---
+# tasks file for minecraft
+
+- name: create minecraft user
+  ansible.builtin.user:
+    name: minecraft
+    comment: Minecraft User
+    shell: /bin/bash
+
+- name: install required packages
+  ansible.builtin.dnf:
+    name:
+      - java-21-openjdk-headless
+      - screen
+    state: latest
+
+# EOF
