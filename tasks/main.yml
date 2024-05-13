@@ -20,4 +20,6 @@
 
 - ansible.builtin.include_tasks: install_jar.yml
 
+- ansible.builtin.include_tasks: install_configs.yml
+
 # EOF
