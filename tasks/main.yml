@@ -8,11 +8,6 @@
     shell: /bin/bash
     home: "{{ minecraft_home }}"
 
-- name: install required packages
-  ansible.builtin.dnf:
-    name:
-      - java-latest-openjdk-headless
-      - screen
-    state: latest
+- ansible.builtin.include_tasks: packages-RedHat.yml
 
 # EOF
