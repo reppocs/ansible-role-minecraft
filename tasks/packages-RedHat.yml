@@ -1,3 +1,5 @@
+---
+
 - name: install required packages
   ansible.builtin.dnf:
     name:
@@ -5,4 +7,4 @@
       - screen
     state: latest
 
-    # EOF
+# EOF
