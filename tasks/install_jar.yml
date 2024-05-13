@@ -1,0 +1,13 @@
+---
+
+- name: download server jar
+  ansible.builtin.get_url:
+    url: "{{ jar_url }}"
+    dest: "{{ minecraft_home }}/{{ server_name }}"
+
+- name: create jar version link
+  ansible.builtin.file:
+    src: "{{ minecraft_home }}/{{ server_name }}/server.jar"
+    dest: "{{ minecraft_home }}/{{ server_name }}/minecraft_server.{{ jar_version }}.jar"
+
+# EOF
