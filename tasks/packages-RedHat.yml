@@ -1,0 +1,8 @@
+- name: install required packages
+  ansible.builtin.dnf:
+    name:
+      - java-latest-openjdk-headless
+      - screen
+    state: latest
+
+    # EOF
