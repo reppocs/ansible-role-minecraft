@@ -18,4 +18,6 @@
     group: minecraft
     mode: '0755'
 
+- ansible.builtin.include_tasks: install_jar.yml
+
 # EOF
