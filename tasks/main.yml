@@ -6,11 +6,12 @@
     name: minecraft
     comment: Minecraft User
     shell: /bin/bash
+    home: "{{ minecraft_home }}"
 
 - name: install required packages
   ansible.builtin.dnf:
     name:
-      - java-21-openjdk-headless
+      - java-latest-openjdk-headless
       - screen
     state: latest
 
