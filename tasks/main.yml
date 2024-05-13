@@ -10,4 +10,12 @@
 
 - ansible.builtin.include_tasks: packages-RedHat.yml
 
+- name: create server directory
+  ansible.builtin.file:
+    path: "{{ minecraft_home }}/{{ server_name }}"
+    state: directory
+    owner: minecraft
+    group: minecraft
+    mode: '0755'
+
 # EOF
