@@ -1,4 +1,10 @@
 ---
 # vars file for minecraft
 
+jar_version: "1.20.6"
+
+jar_url: "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar"
+
 minecraft_home: "/opt/minecraft"
+
+# EOF
