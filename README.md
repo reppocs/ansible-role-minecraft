@@ -26,7 +26,7 @@ Put the following in your requirements.txt file.
   roles:
 
   - name: minecraft
-    src: https://github.com/reppocs/ansible-role-minecraft.github
+    src: https://github.com/reppocs/ansible-role-minecraft.git
     version: main
 ```
 
