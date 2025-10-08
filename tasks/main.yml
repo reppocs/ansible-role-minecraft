@@ -1,0 +1,24 @@
+---
+
+- name: Verify Distribution
+  ansible.builtin.fail:
+    msg: "This role is not compatible with the host's distribution"
+  when: (ansible_distribution != "Ubuntu") and (ansible_os_family != "RedHat")
+
+- name: Include package install task
+  ansible.builtin.include_tasks: packages.yml
+
+- name: Include user creation and configuration task
+  ansible.builtin.include_tasks: user.yml
+
+- name: Include the minecraft configuration task
+  ansible.builtin.include_tasks: config.yml
+
+- name: Include the systemd configuration task
+  ansible.builtin.include_tasks: systemd.yml
+
+- name: Include the firewall task
+  ansible.builtin.include_tasks: firewall.yml
+
+- name: Include minecraft backup deployment task
+  ansible.builtin.include_tasks: backup.yml

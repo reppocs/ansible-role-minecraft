@@ -1,0 +1,27 @@
+- name: Deploy and configure the backup process
+  become: true
+  block:
+
+    - name: Create root bin directory
+      ansible.builtin.file:
+        path: /root/bin
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Deploy the minecraft backup script
+      ansible.builtin.template:
+        src: mcbackup.sh.j2
+        dest: /root/bin/mcbackup.sh
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Add the backup script to cron
+      ansible.builtin.cron:
+        name: "minecraft backup script"
+        minute: "0"
+        hour: "3"
+        job: "/root/bin/mcbackup.sh"
+        user: root

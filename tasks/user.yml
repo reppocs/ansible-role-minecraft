@@ -1,0 +1,8 @@
+- name: Create minecraft user
+  become: true
+  ansible.builtin.user:
+    name: "{{ minecraft_user }}"
+    system: true
+    create_home: true
+    home: "{{ minecraft_home }}"
+    shell: /bin/bash

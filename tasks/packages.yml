@@ -1,0 +1,21 @@
+- name: Install minecraft packages
+  become: true
+  block:
+
+    - name: Install OpenJDK headless (Ubuntu)
+      ansible.builtin.apt:
+        name: "openjdk-{{ java_version }}-jre-headless"
+        state: present
+        update_cache: true
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Install OpenJDK headless (RedHat)
+      ansible.builtin.dnf:
+        name: "java-{{ java_version }}-openjdk-headless"
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install screen
+      ansible.builtin.package:
+        name: screen
+        state: present

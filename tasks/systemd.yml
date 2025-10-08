@@ -1,0 +1,15 @@
+- name: Configure systemd
+  become: true
+  block:
+
+    - name: Deploy minecraft systemd service file
+      ansible.builtin.template:
+        src: minecraft-at.service.j2
+        dest: /etc/systemd/system/minecraft@.service
+        mode: '0644'
+
+    - name: Enable minecraft service
+      ansible.builtin.systemd:
+        name: "minecraft@{{ server_name }}"
+        enabled: true
+        daemon_reload: true

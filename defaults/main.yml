@@ -1,0 +1,9 @@
+#SPDX-License-Identifier: MIT-0
+---
+# default vars file for minecraft
+
+server_difficulty: "hard"
+server_port: 25565
+minecraft_user: "minecraft"
+minecraft_group: "minecraft"
+minecraft_home: "/opt/{{ minecraft_user }}"

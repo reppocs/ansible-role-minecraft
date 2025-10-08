@@ -1,0 +1,18 @@
+- name: Configure firewall port(s)
+  become: true
+  block:
+
+  - name: Open up minecraft port in ufw
+    community.general.ufw:
+      rule: allow
+      port: "{{ server_port }}"
+      proto: tcp
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Open up minecraft port in firewalld
+    ansible.posix.firewalld:
+      port: "{{ server_port }}"
+      permanent: true
+      state: enabled
+      immediate: true
+    when: ansible_os_family == "RedHat"
