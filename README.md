@@ -23,11 +23,11 @@ Usage
 Put the following in your requirements.txt file.
 
 ```
-  roles:
+roles:
 
-  - name: minecraft
-    src: https://github.com/reppocs/ansible-role-minecraft.git
-    version: main
+- src: https://github.com/reppocs/ansible-role-minecraft.git
+  name: reppocs.minecraft
+
 ```
 
 Then, run the following to install the role.
