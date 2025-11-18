@@ -5,11 +5,10 @@
 java_version: 21
 server_version: "1.21.10"
 server_difficulty: "hard"
+server_gamemode: "survival"
 server_jar: "https://piston-data.mojang.com/v1/objects/95495a7f485eedd84ce928cef5e223b757d2f764/server.jar"
-server_port: 25565
 server_name: "lonelycraft"
+server_motd: "Lonelycraft, Baby!"
 server_mem: "8G"
 server_backup_dir: "/data/backup/minecraft"
-minecraft_user: "minecraft"
-minecraft_group: "minecraft"
-minecraft_home: "/opt/{{ minecraft_user }}"
+server_white_list: "true"
