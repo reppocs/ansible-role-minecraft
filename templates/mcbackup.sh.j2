@@ -7,7 +7,7 @@
 # ./mcbackup.sh servername
 
 SERVER="$1"
-MCHOME=~minecraft
+MCHOME="~{{ minecraft_user }}"
 SERVERPATH="$MCHOME/$SERVER"
 BACKUPDIR="{{ server_backup_dir }}/$SERVER"
 
