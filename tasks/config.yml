@@ -1,14 +1,13 @@
 - name: Configure minecraft server
   become: true
   block:
-
     - name: Create server directory
       ansible.builtin.file:
         path: "{{ minecraft_home }}/{{ server_name }}"
         state: directory
         owner: "{{ minecraft_user }}"
         group: "{{ minecraft_group }}"
-        mode: '0755'
+        mode: "0755"
 
     - name: Download server jar
       ansible.builtin.get_url:
@@ -16,7 +15,7 @@
         dest: "{{ minecraft_home }}/{{ server_name }}/minecraft_server.{{ server_version }}.jar"
         owner: "{{ minecraft_user }}"
         group: "{{ minecraft_group }}"
-        mode: '0644'
+        mode: "0644"
 
     - name: Link jar file to server.jar
       ansible.builtin.file:
@@ -32,7 +31,7 @@
         dest: "{{ minecraft_home }}/{{ server_name }}/server.conf"
         owner: "{{ minecraft_user }}"
         group: "{{ minecraft_group }}"
-        mode: '0644'
+        mode: "0644"
 
     - name: Deploy server.properties template
       ansible.builtin.template:
@@ -40,7 +39,7 @@
         dest: "{{ minecraft_home }}/{{ server_name }}/server.properties"
         owner: "{{ minecraft_user }}"
         group: "{{ minecraft_group }}"
-        mode: '0644'
+        mode: "0644"
 
     - name: Copy whitelist.json
       ansible.builtin.copy:
@@ -48,7 +47,7 @@
         dest: "{{ minecraft_home }}/{{ server_name }}/whitelist.json"
         owner: "{{ minecraft_user }}"
         group: "{{ minecraft_group }}"
-        mode: '0644'
+        mode: "0644"
 
     - name: Copy ops.json
       ansible.builtin.copy:
@@ -56,4 +55,12 @@
         dest: "{{ minecraft_home }}/{{ server_name }}/ops.json"
         owner: "{{ minecraft_user }}"
         group: "{{ minecraft_group }}"
-        mode: '0644'
+        mode: "0644"
+
+    - name: Copy eula.txt
+      ansible.builtin.copy:
+        src: eula.txt
+        dest: "{{ minecraft_home }}/{{ server_name }}/eula.txt"
+        owner: "{{ minecraft_user }}"
+        group: "{{ minecraft_group }}"
+        mode: "0644"
