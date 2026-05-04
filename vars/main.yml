@@ -3,10 +3,10 @@
 # vars file for minecraft
 
 java_version: 21
-server_version: "1.21.10"
+server_version: "26.1.2"
 server_difficulty: "hard"
 server_gamemode: "survival"
-server_jar: "https://piston-data.mojang.com/v1/objects/95495a7f485eedd84ce928cef5e223b757d2f764/server.jar"
+server_jar: "https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd1090b0c56f9bc51/server.jar"
 server_name: "lonelycraft"
 server_motd: "Lonelycraft, Baby!"
 server_mem: "8G"
