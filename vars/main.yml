@@ -2,7 +2,7 @@
 ---
 # vars file for minecraft
 
-java_version: 21
+java_version: 25
 server_version: "26.1.2"
 server_difficulty: "hard"
 server_gamemode: "survival"
