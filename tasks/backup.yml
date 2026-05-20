@@ -23,5 +23,5 @@
         name: "minecraft backup script"
         minute: "0"
         hour: "3"
-        job: "/root/bin/mcbackup.sh"
+        job: "/root/bin/mcbackup.sh {{ server_name }}"
         user: root
