@@ -10,5 +10,5 @@ server_jar: "https://piston-data.mojang.com/v1/objects/97ccd4c0ed3f81bbb7bfacddd
 server_name: "lonelycraft"
 server_motd: "Lonelycraft, Baby!"
 server_mem: "8G"
-server_backup_dir: "/data/backup/minecraft"
+server_backup_dir: "/data/backup"
 server_white_list: "true"
