@@ -10,6 +10,14 @@
         group: root
         mode: '0755'
 
+    - name: Create backup minecraft backup directory
+      ansible.builtin.file:
+        path: "{{ server_backup_dir}"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
     - name: Deploy the minecraft backup script
       ansible.builtin.template:
         src: mcbackup.sh.j2
